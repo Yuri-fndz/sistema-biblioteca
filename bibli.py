@@ -3,7 +3,6 @@ from difflib import get_close_matches
 
 livros = []
 
-
 def normalizar(texto):
     texto = unicodedata.normalize("NFD", texto)
 
@@ -12,9 +11,7 @@ def normalizar(texto):
         for caractere in texto
         if unicodedata.category(caractere) != "Mn"
     )
-
     return texto.lower()
-
 
 def procurar_livro():
     busca = input("Digite o nome do livro ou autor: ")
@@ -55,7 +52,6 @@ def procurar_livro():
     else:
         print("\nNenhum livro encontrado.")
 
-
 def adicionar_livro():
     nome = input("Nome do livro: ")
     autor = input("Autor: ")
@@ -64,9 +60,7 @@ def adicionar_livro():
         "nome": nome,
         "autor": autor
     })
-
     print("Livro adicionado!")
-
 
 def remover_livro():
     nome = input("Digite o nome do livro que deseja remover: ")
@@ -78,12 +72,9 @@ def remover_livro():
             livros.remove(livro)
             print("Livro removido!")
             return
-
     print("Livro não encontrado.")
 
-
 while True:
-
     print("\n===== BIBLIOTECA =====")
     print("1 - Procurar livro")
     print("2 - Adicionar livro")
